@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="cora.css"> 
+    <title>tqm</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="2871482820979272488" 
+        data-share-method="host" data-aspect-ratio="1.28351" data-width="100%">
+        <a href="https://tenor.com/view/mochi-pet-mochi-cat-cute-squiddy-gif-2871482820979272488">
+            Mochi Pet GIF</a>from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a>
+        </div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <p>Te amoooo mucho<br>
+            Quieres ser mi novia?<br>
+            </p>
+            
+        <div class="cont">
+            <button id="yess">SÍ</button>
+            <button id="bruh">NO</button>
+        </div>
+    </div>
+    <script src="corazon.js"></script>
+    <script>
+        const yess=document.querySelector('#yess');
+        yess.addEventListener('click', function(){
+            window.location.href='si.html';
+        })
+
+        const bruh=document.querySelector('#bruh');
+        let lastX = 0;
+        let lastY = 0;
+        const MIN_DISTANCE = 15; // % mínimo de movimiento
+        bruh.addEventListener('pointerdown', (e) => {
+            e.preventDefault();
+
+            let randomX, randomY;
+            do {
+                    randomX = Math.floor(Math.random() * 80);
+                    randomY = Math.floor(Math.random() * 80);
+            } while (
+            Math.abs(randomX - lastX) < MIN_DISTANCE &&
+            Math.abs(randomY - lastY) < MIN_DISTANCE
+            );
+
+            lastX = randomX;
+            lastY = randomY;
+
+            bruh.style.left = randomX + '%';
+            bruh.style.top = randomY + '%';
+          });
+
+    </script>
+
+</body>
+</html>
